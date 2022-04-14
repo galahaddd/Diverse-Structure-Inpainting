@@ -14,15 +14,15 @@ import net.nn as nn
 parser = argparse.ArgumentParser()
 
 # Data
-parser.add_argument('--checkpoints_dir', type=str, default='/gdata/vqvae-inpainting', 
+parser.add_argument('--checkpoints_dir', type=str, default='/kaggle/working/vqvae-inpainting',
                     help='checkpoints are saved here.')
-parser.add_argument('--dataset', type=str, default='celebahq', 
+parser.add_argument('--dataset', type=str, default='landscape',
                     help='dataset of the experiment.')
-parser.add_argument('--train_flist', type=str, default='/gdata/celeba-hq/train.flist', 
+parser.add_argument('--train_flist', type=str, default='/kaggle/working/train.flist',
                     help='file list of training set.')
-parser.add_argument('--valid_flist', type=str, default='/gdata/celeba-hq/val.flist', 
+parser.add_argument('--valid_flist', type=str, default='/kaggle/working/val.flist',
                     help='file list of validation set.')
-parser.add_argument('--vqvae_network_dir', type=str, default='/gdata/vqvae-inpainting/20200805-190115_celebahq_VQVAE', 
+parser.add_argument('--vqvae_network_dir', type=str, default='/gdata/vqvae-inpainting/20200805-190115_celebahq_VQVAE',
                     help='pre-trained VQVAE network is given here.')
 
 # Architecture
