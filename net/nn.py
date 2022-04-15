@@ -143,8 +143,9 @@ def vqvae_visual(gt, recons, iter, size, save_dir):
     result = 255 * np.ones((height, width, 3), dtype=np.uint8) 
 
     for i in range(4):
-        gt_i = ((gt[i] + 1.) * 127.5).astype(np.uint8)
-        recons_i = ((recons[i] + 1.) * 127.5).astype(np.uint8)
+        print(gt)
+        gt_i = ((gt[0,i] + 1.) * 127.5).astype(np.uint8)
+        recons_i = ((recons[0,i] + 1.) * 127.5).astype(np.uint8)
         
         # fill the images into grid
         result[i*(size+gap):i*(size+gap)+size, 0*(size+gap):0*(size+gap)+size, ::-1] = gt_i
@@ -165,10 +166,11 @@ def structure_visual(gt, masked, recons_gen, recons_gt, iter, size, save_dir):
     result = 255 * np.ones((height, width, 3), dtype=np.uint8) 
 
     for i in range(4):
-        gt_i = ((gt[i] + 1.) * 127.5).astype(np.uint8)
-        masked_i = ((masked[i] + 1.) * 127.5).astype(np.uint8)
-        recons_gen_i = ((recons_gen[i] + 1.) * 127.5).astype(np.uint8)
-        recons_gt_i = ((recons_gt[i] + 1.) * 127.5).astype(np.uint8)
+        print(gt)
+        gt_i = ((gt[0,i] + 1.) * 127.5).astype(np.uint8)
+        masked_i = ((masked[0,i] + 1.) * 127.5).astype(np.uint8)
+        recons_gen_i = ((recons_gen[0,i] + 1.) * 127.5).astype(np.uint8)
+        recons_gt_i = ((recons_gt[0,] + 1.) * 127.5).astype(np.uint8)
         
         # fill the images into grid
         result[i*(size+gap):i*(size+gap)+size, 0*(size+gap):0*(size+gap)+size, ::-1] = gt_i
@@ -191,10 +193,10 @@ def texture_visual(gt, masked, complete, recons_gt, iter, size, save_dir):
     result = 255 * np.ones((height, width, 3), dtype=np.uint8) 
 
     for i in range(4):
-        gt_i = ((gt[i] + 1.) * 127.5).astype(np.uint8)
-        masked_i = ((masked[i] + 1.) * 127.5).astype(np.uint8)
-        complete_i = ((complete[i] + 1.) * 127.5).astype(np.uint8)
-        recons_gt_i = ((recons_gt[i] + 1.) * 127.5).astype(np.uint8)
+        gt_i = ((gt[0,i] + 1.) * 127.5).astype(np.uint8)
+        masked_i = ((masked[0,i] + 1.) * 127.5).astype(np.uint8)
+        complete_i = ((complete[0,i] + 1.) * 127.5).astype(np.uint8)
+        recons_gt_i = ((recons_gt[0,i] + 1.) * 127.5).astype(np.uint8)
         
         # fill the images into grid
         result[i*(size+gap):i*(size+gap)+size, 0*(size+gap):0*(size+gap)+size, ::-1] = masked_i
