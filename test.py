@@ -15,15 +15,15 @@ import net.nn as nn
 parser = argparse.ArgumentParser()
 
 # Data
-parser.add_argument('--checkpoints_dir', type=str, default='/gdata/vqvae-inpainting', 
+parser.add_argument('--checkpoints_dir', type=str, default='Diverse-Structure-Inpainting/data/vqvae-inpainting', 
                     help='checkpoints are saved here.')
-parser.add_argument('--dataset', type=str, default='celebahq', 
+parser.add_argument('--dataset', type=str, default='landscape', 
                     help='dataset of the experiment.')
-parser.add_argument('--img_flist', type=str, default='/gdata/test_set/celeba-hq.flist', 
+parser.add_argument('--img_flist', type=str, default='Diverse-Structure-Inpainting/data/flist/train.flist', 
                     help='file list of images to be completed.')
-parser.add_argument('--mask_flist', type=str, default='/gdata/test_set/mask.flist', 
+parser.add_argument('--mask_flist', type=str, default='Diverse-Structure-Inpainting/data/flist/random_mask.flist', 
                     help='file list of masks. 255 indicates missing region.')
-parser.add_argument('--full_model_dir', type=str, default='model_logs/', 
+parser.add_argument('--full_model_dir', type=str, default='Diverse-Structure-Inpainting/model_logs', 
                     help='full model is given here.')
 parser.add_argument('--test_num', default=10, type=int, 
                     help='number of images for test.')

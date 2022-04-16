@@ -13,13 +13,13 @@ import net.nn as nn
 parser = argparse.ArgumentParser()
 
 # Data
-parser.add_argument('--checkpoints_dir', type=str, default='/kaggle/working/vqvae-inpainting',
+parser.add_argument('--checkpoints_dir', type=str, default='Diverse-Structure-Inpainting/data/vqvae-inpainting',
                     help='checkpoints are saved here.')
 parser.add_argument('--dataset', type=str, default='landscape',
                     help='dataset of the experiment.')
-parser.add_argument('--train_flist', type=str, default='/kaggle/working/train.flist',
+parser.add_argument('--train_flist', type=str, default='Diverse-Structure-Inpainting/data/flist/train.flist',
                     help='file list of training set.')
-parser.add_argument('--valid_flist', type=str, default='/kaggle/working/val.flist',
+parser.add_argument('--valid_flist', type=str, default='Diverse-Structure-Inpainting/data/flist/val.flist',
                     help='file list of validation set.')
 
 # Architecture
@@ -49,7 +49,7 @@ parser.add_argument('--batch_size', type=int, default=8,
                     help='batch size.')
 parser.add_argument('--learning_rate', type=float, default=1e-4,
                     help='learning rate.')
-parser.add_argument('--max_steps', type=int, default=1000000,
+parser.add_argument('--max_steps', type=int, default=40000,
                     help='max number of iterations.')
 parser.add_argument('--val_steps', type=int, default=10000,
                     help='steps of validation.')

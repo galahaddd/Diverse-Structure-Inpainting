@@ -16,11 +16,11 @@ import net.nn as nn
 parser = argparse.ArgumentParser()
 
 # Data
-parser.add_argument('--checkpoint_dir', default='model_logs/', type=str,
+parser.add_argument('--checkpoint_dir', default='Diverse-Structure-Inpainting/model_logs/', type=str,
                     help='directory of tensorflow checkpoint.')
-parser.add_argument('--structure_generator_dir', type=str, default='/gdata/vqvae-inpainting/20200821-030240_celebahq_StructureGenerator', 
+parser.add_argument('--structure_generator_dir', type=str, default='Diverse-Structure-Inpainting/data/vqvae-inpainting/20220415-212839_landscape_StructureGenerator', 
                     help='pre-trained structure generator is given here.')
-parser.add_argument('--texture_generator_dir', type=str, default='/gdata/vqvae-inpainting/20200819-025515_celebahq_TextureGenerator', 
+parser.add_argument('--texture_generator_dir', type=str, default='Diverse-Structure-Inpainting/data/vqvae-inpainting/20220415-223331_landscape_TextureGenerator', 
                     help='pre-trained texture generator is given here.')
 
 # Architecture

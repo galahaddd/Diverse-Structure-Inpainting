@@ -14,15 +14,15 @@ import net.nn as nn
 parser = argparse.ArgumentParser()
 
 # Data
-parser.add_argument('--checkpoints_dir', type=str, default='/kaggle/working/vqvae-inpainting',
+parser.add_argument('--checkpoints_dir', type=str, default='Diverse-Structure-Inpainting/data/vqvae-inpainting',
                     help='checkpoints are saved here.')
 parser.add_argument('--dataset', type=str, default='landscape',
                     help='dataset of the experiment.')
-parser.add_argument('--train_flist', type=str, default='/kaggle/working/train.flist',
+parser.add_argument('--train_flist', type=str, default='Diverse-Structure-Inpainting/data/flist/train.flist',
                     help='file list of training set.')
-parser.add_argument('--valid_flist', type=str, default='/kaggle/working/val.flist',
+parser.add_argument('--valid_flist', type=str, default='Diverse-Structure-Inpainting/data/flist/val.flist',
                     help='file list of validation set.')
-parser.add_argument('--vqvae_network_dir', type=str, default='/gdata/vqvae-inpainting/20200805-190115_celebahq_VQVAE',
+parser.add_argument('--vqvae_network_dir', type=str, default='Diverse-Structure-Inpainting/data/vqvae-inpainting/20220415-202902_landscape_VQVAE',
                     help='pre-trained VQVAE network is given here.')
 
 # Architecture
@@ -58,9 +58,9 @@ parser.add_argument('--learning_rate', type=float, default=1e-4,
                     help='learning rate.')
 parser.add_argument('--fea_loss_weight', type=float, default=0.1, 
                     help='weight of feature loss.')
-parser.add_argument('--max_steps', type=int, default=1000000,
+parser.add_argument('--max_steps', type=int, default=10000,
                     help='max number of iterations.')
-parser.add_argument('--train_spe', type=int, default=10000,
+parser.add_argument('--train_spe', type=int, default=1000,
                     help='steps of inpainting images and saving models.')
 
 # EMA setting
@@ -68,7 +68,7 @@ parser.add_argument('--ema_decay', type=float, default=0.9997,
                     help='decay rate of EMA in validation.')
 
 # Mask setting
-parser.add_argument('--random_mask', type=bool, default=False,
+parser.add_argument('--random_mask', type=bool, default=True,
                     help='random mask or not.')
 parser.add_argument('--mask_size', type=int, default=128,
                     help='provide square masks of this size.')
